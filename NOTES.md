@@ -131,6 +131,10 @@ padding: `p-{size=number}`
 border-radius: `rounded-{size=string}`
 background-color: `bg-{color=string}-{opacity=number}`
 color: `text-{color=string}`
+font-size: `text-{size=string}`
+flex space between horizontally: `space-x-{size=number}`
+margin-top: `my-{size=number}`
+margin-bottom: `mb-{size=number}`
 
 my approach to learning something new:
 * what do I already know? I know how to style a button; I wanna set the background color, font color, border radius, and hover effects of my btn => look up how to do exactly those things in tailwind documentation. I could get very overwhelmed by trying to learn it all before trying anything, and I could try to follow a tutorial that'll totally transform my page -- but I want to learn how it works by playing! start with a small piece, style it to satisfaction, and then go a piece bigger.
