@@ -119,3 +119,20 @@ To change the "POST /pokemon" route:
     * app.use(methodOverride("_method"))
 - create favoritesIndex.ejs to display the favorites instead of reusing the index.ejs
     * change button so it doesn't double add to faves
+
+
+## TAILWIND NOTES
+display: `grid`
+box-sizing: `box-border`
+
+grid-column-start: `col-start-{grid-line=number}`
+grid-column-end: `col-end-{grid-line=number}`
+padding: `p-{size=number}`
+border-radius: `rounded-{size=string}`
+background-color: `bg-{color=string}-{opacity=number}`
+color: `text-{color=string}`
+
+have to think about the parent settings that will allow us to manipulate children
+
+
+when playing with css, and something's not applying like I think it should, I try another value to see if it's doing anything at all
