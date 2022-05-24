@@ -1,31 +1,38 @@
 <div class="
-  bg-violet-600
+  bg-slate-600
   p-2
   col-start-2
   col-end-5
   grid grid-cols-3 grid-rows-2
 ">
-  <h1 class="
+<h1 class="
 	col-start-1
-	col-span-2
+	col-span-3
 	row-start-1
 	justify-end
-  ">The Original 151 Pokemon</h1>
-  <p class="
-  	col-start-3
-	col-span-1
-	row-start-1
-  ">
-    <a href="/">Home</a>
-    <a href="/pokemon">Favorites</a>
-  </p>
+	text-xl
+	font-bold
+	flex flec-col justify-center
+	">The Original 151 Pokemon</h1>
+<p class="
+	col-start-1
+	col-span-3
+	row-start-2
+	font-light
+	flex flec-col justify-center
+	px-3
+	">
+    <a href="/">Home </a> 
+    <a href="/pokemon"> Favorites</a>
+</p>
 
-  <% pokemon.forEach(function(pokemon) { %>
+<% pokemon.forEach(function(pokemon) { %>
     <div class="
-      pt-5
+	flex flex-col place-items-center
     ">
-      <h2 class="
-      "><a href="pokemon/<%=pokemon.name%>"><%= pokemon.name %></a></h2>
+	<h2 class="
+		p-3
+    "><a href="pokemon/<%=pokemon.name%>"><%= pokemon.name %></a></h2>
       <form method="POST" action="/pokemon">
         <input hidden type="text" name="name" value="<%= pokemon.name %>">
         <button type="submit" class="
@@ -34,6 +41,7 @@
           min-w-min 
           rounded-full
           p-2
+		  mb-2
         ">Add to Favorite Pokemon</button>
       </form>
     </div>
