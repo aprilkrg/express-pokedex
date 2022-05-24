@@ -13,11 +13,15 @@ app.use(methodOverride("_method"))
 
 // GET / - main index of site
 app.get('/', (req, res) => {
-  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/';
+  let pokemonUrl = 'http://pokeapi.co/api/v2/pokemon?limit=151/';
   // Use request to call the API
   axios.get(pokemonUrl).then(apiResponse => {
     let pokemon = apiResponse.data.results;
-    res.render('index', { pokemon: pokemon.slice(0, 151) });
+    const context = {
+      pokemon: pokemon.slice(0, 151),
+      title: "All Pokemon"
+    }
+    res.render('index', context);
   })
 });
 

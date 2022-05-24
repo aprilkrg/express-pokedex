@@ -119,3 +119,4 @@ To change the "POST /pokemon" route:
     * app.use(methodOverride("_method"))
 - create favoritesIndex.ejs to display the favorites instead of reusing the index.ejs
     * change button so it doesn't double add to faves
+- change amount of pokemon fetched by setting limit query

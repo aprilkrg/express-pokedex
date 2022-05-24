@@ -9,6 +9,11 @@
         <h2><a href="pokemon/<%=pokemon.name%>"><%= pokemon.name %></a></h2>
         <img src="<%= pokemon.sprites.front_default %>">
 
+        <form method="POST" action="/pokemon/<%=pokemon.name%>/?_method=DELETE">
+          <input hidden type="text" name="name" value="<%= pokemon.name %>">
+          <button class="btn btn-primary" type="submit">Remove From Favorites</button>
+        </form>
+
         <ul>Abilities: </ul>
         <% pokemon.abilities.forEach(item => { %>
             <li><%= item.ability.name %></li>
@@ -17,12 +22,6 @@
         <% pokemon.moves.forEach(item => { %>
             <li><%= item.move.name %></li>
         <% }) %>
-
-
-        <form method="POST" action="/pokemon/<%=pokemon.name%>/?_method=DELETE">
-          <input hidden type="text" name="name" value="<%= pokemon.name %>">
-          <button class="btn btn-primary" type="submit">Remove From Favorites</button>
-        </form>
       </div>
 
   </div>

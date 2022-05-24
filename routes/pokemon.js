@@ -8,7 +8,11 @@ router.get('/', async (req, res) => {
   // res.send('Render a page of favorites here');
   // TODO: Get all records from the DB and render to view
   const pokemonFromDb = await db.pokemon.findAll()
-  res.render("index.ejs", {pokemon: pokemonFromDb})
+  const context = {
+    pokemon: pokemonFromDb,
+    title: "Favorite Pokemon"
+  }
+  res.render("index.ejs", context)
 });
 
 // POST /pokemon - receive the name of a pokemon and add it to the database
@@ -43,8 +47,8 @@ router.delete("/:name", async (req,res) => {
   db.pokemon.destroy({where: {
     name: req.params.name
   }})
-  const pokemonFromDb = await db.pokemon.findAll()
-  res.render("index.ejs", {pokemon: pokemonFromDb})
+  // const pokemonFromDb = await db.pokemon.findAll()
+  res.redirect("/pokemon")
 })
 
 module.exports = router;
