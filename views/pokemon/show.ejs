@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="text-center">The Original 151 Pokemon</h1>
+    <p class="text-center">
+      <!-- TODO create link to Home page, url "/" -->
+      <a href="/">Home</a>
+      <a href="/pokemon">Favorites</a>
+    </p>
+  <h2><%= pokemon.name %></h2>
+  <img src="<%= pokemon.sprites.front_default %>">
+    <ul>
+        Moves:
+        <% pokemon.moves.forEach(item => { %>
+            <li><%= item.move.name %></li>
+            <% }) %>
+    </ul>
+
+  </div>
+  

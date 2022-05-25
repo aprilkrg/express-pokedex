@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="text-center">The Original 151 Pokemon</h1>
+  <p class="text-center">
+    <!-- TODO create link to Home page, url "/" -->
+    <a href="/">Home</a>
+    <a href="/pokemon">Favorites</a>
+  </p>
+
+  <% pokemon.forEach(function(pokemon) { %>
+    <div class="well">
+      <!-- TODO create link to show page on name h2, url "/pokemon/taco-name" -->
+      <h2><a href="/pokemon/<%=pokemon.name%>"><%= pokemon.name %></a></h2>
+
+      
+    </div>
+  <% }); %>
+</div>
