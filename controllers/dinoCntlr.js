@@ -1,4 +1,5 @@
 const { default: axios } = require("axios")
+const db = require("../models")
 
 // create empty object so we can add properties, which are functions
 const cntlr = {}
@@ -19,6 +20,16 @@ cntlr.showOne = async(req,res) => {
 
 // TODO
 // DELETE /pokemon/pikachu
+cntlr.deleteOne = async(req,res) => {
+    console.log("delete one cntlr")
+    db.pokemon.destroy({
+        where: {
+            name: req.params.name
+        }
+    })
+    const allFromDb = await db.pokemon.findAll()
+    res.render("pokemon/index.ejs", {pokemon: allFromDb})
+}
 
 // export the module
 module.exports = cntlr

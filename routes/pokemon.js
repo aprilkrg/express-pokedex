@@ -45,5 +45,6 @@ router.get("/:nameParam", controller.showOne)
 
 // NOTE
 // DELETE /pokemon/pikachu - delete pokemon from db and redirect to all faves
+router.delete("/:name", controller.deleteOne)
 
 module.exports = router;
